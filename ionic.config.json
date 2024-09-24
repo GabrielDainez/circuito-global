@@ -1,0 +1,7 @@
+{
+  "name": "circuito-global",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
