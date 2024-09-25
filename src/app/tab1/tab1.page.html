@@ -1,17 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="background-img"></div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div *ngIf="!auth.user" class="container-content">
+    <form [formGroup]="registerForm" action="">
+      <ion-input type="email" fill="solid" label="Email" labelPlacement="floating" helperText="Digite um Email válido"
+        errorText="Invalid email" ngModel email formControlName="email">
+      </ion-input>
+      <ion-input type="password" fill="solid" label="Senha" labelPlacement="floating" ngModel senha
+        formControlName="senha">
+      </ion-input>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+      <ion-button (click)="onSignin()" expand="full">Registrar</ion-button>
+    </form>
+  </div>
+
+  <div *ngIf="auth.user">
+    <p>Você está logado</p>
+  </div>
